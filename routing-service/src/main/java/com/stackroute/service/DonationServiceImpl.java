@@ -193,13 +193,7 @@ public class DonationServiceImpl implements DonationService
             Charity charity = charityList.get(i);
             List<DeliveryBoy> deliveryBoyList = deliveryBoyRepository.getSortedDeliveryBoysByDistanceAndAvailability(charity.getCharityId());
             System.out.println(" Fetched Delivery Boys for Cluster of Charity : " + charity.getCharityName() + " Sorted By Distance and their Availability\n");
-
-            System.out.println("trying to print>>>>>>>>>>>>>>>>>>>>>>>>>>>>.");
-            for( int j = 0; j < deliveryBoyList.size(); j++) {
-                System.out.println(deliveryBoyList.get(j));
-            }
             DeliveryBoy deliveryBoy = deliveryBoyList.get(0);
-
             System.out.println("Delivery Boy { " + deliveryBoy.getDeliveryBoyId() + " " + deliveryBoy.getDeliveryBoyName() + " }\n");
             List<Restaurant> restaurantList = restaurantRepository.getAllocatedRestaurants(charity.getCharityId());
             System.out.println("Fetched Allocated Restaurants for Charity : " + charity.getCharityName() + "\n");
