@@ -37,7 +37,7 @@ saveDeliveryBoy(deliveryBoy){
 
  updateDeliveryBoyActivity(details){
   var url= "http://13.234.235.193:8080/routing-service/updateDeliveryBoyDetails";
-  console.log("Updating Delivery Boy Details With Username : ", details.deliveryBoyId , " And Location : " , details.ocation);
+  console.log("Updating Delivery Boy Details With Username : ", details.deliveryBoyId , " And Location : " , details.location);
   return this.http.put<any>(url,details);
  }
  
