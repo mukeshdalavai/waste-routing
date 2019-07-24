@@ -39,6 +39,6 @@ export class CharitySliderComponent implements OnInit {
    this.charityPhonenumber = charity.phonenumber;
  }
  getAllCharities() {
-   return this.http.get('http://13.234.235.193:8000/charity-logs-service/api/v1/charity-slider')
+   return this.http.get('http://13.234.235.193:8080/charity-service/api/v1/charity-slider')
  }
 }
