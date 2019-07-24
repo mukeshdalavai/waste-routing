@@ -89,4 +89,7 @@ public interface DeliveryBoyRepository extends Neo4jRepository<DeliveryBoy, Long
     @Query("MATCH ()-[r:PICKS_FROM]->(d:DeliveryBoy) DELETE r")
     public void removePicksFromRelation();
 
+    @Query("MATCH ()-[r:LINKED_TO]-() DELETE r")
+    public void removeLinkedToRelation();
+
 }

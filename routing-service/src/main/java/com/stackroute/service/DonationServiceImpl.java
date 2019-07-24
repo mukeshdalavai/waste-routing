@@ -103,7 +103,7 @@ public class DonationServiceImpl implements DonationService
 
     @Override @Transactional
     public String removeRestaurantCharityRelation(String charityId) {
-        charityRepository.removeRestaurantCharityRelation(charityId);
+        charityRepository.removeDonatesToRelation();
         return "Successfully Deleted All Incoming Relations for Charity with Id -> " + charityId;
     }
 
@@ -237,6 +237,10 @@ public class DonationServiceImpl implements DonationService
         System.out.println(" Removed All picks from Relations for Delivery Boys");
         deliveryBoyRepository.removeDeliversToRelation();
         System.out.println(" Removed All delivers to Relations for Delivery Boys");
+        charityRepository.removeDonatesToRelation();
+        System.out.println(" Removed All donates to Relations between Restaurants and Charities");
+        deliveryBoyRepository.removeLinkedToRelation();
+        System.out.println(" Removed All Linked To Relations for Delivery Boys");
         return "Reset of stats Successful";
     }
 

@@ -38,8 +38,8 @@ public interface CharityRepository extends Neo4jRepository<Charity, Long> {
     public void removeCharity(@Param("charityId") String charityId);
 
 
-    @Query("MATCH (c:Charity { charityId : {charityId} })<-[r:DONATES_TO]-() DELETE r")
-    public void removeRestaurantCharityRelation(@Param("charityId") String charityId);
+    @Query("MATCH ()-[r:DONATES_TO]->() DELETE r")
+    public void removeDonatesToRelation();
 
 
     @Query("MATCH (c:Charity) RETURN c ORDER BY c.precedence DESC")
