@@ -33,7 +33,7 @@ public interface RestaurantRepository extends Neo4jRepository<Restaurant, Long> 
     public void removeRestaurant(@Param("restaurantId") String restaurantId);
 
 
-    @Query("MATCH (rs:Restaurant)-[r:DONATES_TO]->(c:Charity) WHERE c.charityId = {charityId} AND rs.donated = 'no' AND r.distance < 5.0 RETURN rs ORDER BY r.distance")
+    @Query("MATCH (rs:Restaurant)-[r:DONATES_TO]->(c:Charity) WHERE c.charityId = {charityId} AND rs.donated = 'no' AND r.distance < 10.0 RETURN rs ORDER BY r.distance")
     public List<Restaurant> getSortedRestaurantsByDistanceAndAvailability(@Param("charityId") String charityId);
 
 

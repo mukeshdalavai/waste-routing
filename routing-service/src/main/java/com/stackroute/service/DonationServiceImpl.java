@@ -162,7 +162,7 @@ public class DonationServiceImpl implements DonationService
             double precedence = charity.getPrecedence();
             System.out.println("Food Requirement = " + foodRequirement + " Food Available = " + foodAvailable + "\n");
             List<Restaurant> restaurantList = restaurantRepository.getSortedRestaurantsByDistanceAndAvailability((charity.getCharityId()));
-            System.out.println("Fetched Restaurants For Charity : " + charity.getCharityName() + " Within 5KM Radius And Sorted By Distance And Restaurant's Availability\n");
+            System.out.println("Fetched Restaurants For Charity : " + charity.getCharityName() + " Within 10KM Radius And Sorted By Distance And Restaurant's Availability\n");
             for (int j = 0; j < restaurantList.size(); j++){
                 Restaurant restaurant = restaurantList.get(j);
                 System.out.println("Restaurant { " + restaurant.getRestaurantId() + " " + restaurant.getRestaurantName() + " }");
