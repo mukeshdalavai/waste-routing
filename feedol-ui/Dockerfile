@@ -12,5 +12,5 @@ RUN npm run build
 
 WORKDIR  /app/dist/Wastage
 
-ENTRYPOINT ["http-server", "-c1", "-p", "80"]
+ENTRYPOINT ["http-server", "-c1", "-p", "8080"]
 

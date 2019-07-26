@@ -13,7 +13,7 @@ export class LoginService {
 
   login(user):Observable<any>{ 
     console.log(user)
-    return this.http.post<any>('http://13.234.235.193:8080/authentication-service/authentication/authenticate',user);
+    return this.http.post<any>('http://13.234.235.193:80/authentication-service/authentication/authenticate',user);
   } 
   check(token):Observable<any>{ 
     console.log(token)
@@ -23,6 +23,6 @@ export class LoginService {
         'Authorization': 'Bearer '+token
       })
     };
-    return this.http.get<any>('http://13.234.235.193:8080/authentication-service/authentication/checkUser',httpOptions);
+    return this.http.get<any>('http://13.234.235.193:80/authentication-service/authentication/checkUser',httpOptions);
   }  
 }
